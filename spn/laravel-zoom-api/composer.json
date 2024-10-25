@@ -1,0 +1,62 @@
+{
+    "name": "spn/laravel-zoom-api",
+    "description": "Laravel Zoom API package",
+    "homepage": "https://gitlab.com/spn2/laravel-zoom-multi-user",
+    "keywords": ["spn", "laravel-zoom", "zoom", "laravel", "api", "client"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "spondonit",
+            "email": "spn2@spondonit.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^7.0",
+        "macsidigital/laravel-api-client": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MacsiDigital\\Zoom\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MacsiDigital\\Zoom\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MacsiDigital\\Zoom\\Providers\\ZoomServiceProvider"
+            ],
+            "aliases": {
+                "Zoom": "MacsiDigital\\Zoom\\Facades\\Zoom"
+            }
+        }
+    },
+    "minimum-stability" : "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url":  "../laravel-api-client",
+            "options": {
+              "symlink": true
+            }
+        }
+    ]
+}
